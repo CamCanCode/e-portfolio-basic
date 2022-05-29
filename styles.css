@@ -19,14 +19,36 @@ span {
     line-height: 1.25;
 }
 
+h1 {
+    font-size: 36px;
+}
+
 p {
     line-height: 1.5;
     font-size: 16px;
 }
 
+.flex {
+    display: flex;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.row {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.text--purple {
+    color: #6030b1;
+}
+
 /*NAVIGATION BAR*/
 
-li{
+li {
     list-style-type: none;
 }
 
@@ -42,29 +64,103 @@ nav {
 
 .nav__link--list {
     display: flex;
-margin-right: 24px;
+    margin-right: 24px;
 }
 
 .nav__link--anchor {
-margin: 0 12px;
-color: #242424;
-text-decoration: none;
-font-weight: 700;
+    margin: 0 12px;
+    color: #242424;
+    text-decoration: none;
+    font-weight: 700;
 }
 
 img {
-    max-width: 240px;
+    max-width: 280px;
 }
 
-.nav__link--anchor-primary{
-background-color: #6030b1;
-padding: 8px 20px;
-border-radius: 50px;
-color: white;
-transition: all 300ms ease;
+.nav__link--anchor-primary {
+    background-color: #6030b1;
+    padding: 8px 20px;
+    border-radius: 50px;
+    color: white;
+    transition: all 300ms ease;
 
 }
 
 .nav__link--anchor-primary:hover {
     background-color: #5d3eff;
+}
+
+/*about me*/
+
+#about-me {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me__info--container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    
+
+}
+
+.about-me__picture--mask {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+    margin-bottom: 28px;
+}
+
+.about-me__picture {
+    width: 100%;
+
+    /* improving image */
+    transform: scale(1.5);
+    padding-top: 4px;
+
+}
+
+.about-me__info--para {
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 28px;
+}
+
+.about-me__info--title {
+    margin-bottom: 16px;
+}
+
+.about-me__link {
+font-size: 20px;
+color: #242424;
+text-decoration: none;
+padding: 0 16px;
+}
+
+.about-me__img--container {
+    flex: 1;
+   display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 36px;
+}
+
+.about-me__img {
+    width: 100%;
+    max-width: 600px;
 }
