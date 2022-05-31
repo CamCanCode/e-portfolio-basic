@@ -32,8 +32,41 @@ p {
     font-size: 16px;
 }
 
-a {
+a  {
     text-decoration: none;
+    position: relative;
+    transition: all 300ms ease;
+    
+}
+
+
+
+i:hover {
+    opacity: 0.7;
+}
+
+.link__hover-effect:after {
+content: "";
+position: absolute;
+height: 3px;
+width: 0;
+bottom: -3px;
+right: 0;
+transition: all 300ms ease;
+
+}
+
+.link__hover-effect--white:after {
+    background-color: #fff;
+}
+
+.link__hover-effect--black:after {
+    background-color: black;
+}
+
+.link__hover-effect:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 .flex {
@@ -48,6 +81,7 @@ a {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 12px;
 }
 
 .text--purple {
@@ -86,6 +120,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 12px;
+    margin-bottom: 24px;
 }
 
 .nav__link--list {
@@ -149,6 +185,19 @@ img {
     overflow: hidden;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
     margin-bottom: 28px;
+    animation: animate_profile_picture 800ms 200ms backwards;
+}
+
+@keyframes animate_profile_picture {
+   0% {
+       transform: scale(0);
+   } 
+   80% {
+       transform: scale(1.1);
+   }
+   100% {
+       transform: scale(1);
+   }
 }
 
 .about-me__picture {
@@ -165,10 +214,12 @@ img {
     font-size: 20px;
     line-height: 1.5;
     margin-bottom: 28px;
+    animation: fade-up 650ms 600ms backwards;
 }
 
 .about-me__info--title {
     margin-bottom: 16px;
+    animation: fade-up 650ms 400ms backwards;
 }
 
 .about-me__link {
@@ -176,6 +227,23 @@ img {
     color: #242424;
     text-decoration: none;
     padding: 0 16px;
+    animation: fade-up 650ms 800ms backwards;
+}
+
+.about-me__links {
+    animation: fade-up 650ms 800ms backwards;
+}
+
+@keyframes fade-up {
+   0% {
+       opacity: 0;
+       transform: translateY(40px);
+   } 
+   100% {
+      opacity: 1; 
+      transform: translateY(0);
+   }
+
 }
 
 .about-me__img--container {
@@ -189,6 +257,35 @@ img {
 .about-me__img {
     width: 100%;
     max-width: 600px;
+    animation: img-fade 1000ms 900ms backwards;
+}
+
+@keyframes img-fade {
+    0% {
+        opacity: 0;
+        
+    } 
+    100% {
+       opacity: 1; 
+       
+    }
+}
+
+.wave {
+    display: inline-block;
+animation: animate-wave 500ms infinite ease-in-out;
+}
+
+@keyframes animate-wave {
+0% {
+    transform: rotate(0);
+}
+50% {
+    transform: rotate(30deg);
+}
+100% {
+    transform: rotate(0);
+}
 }
 
 /*tech stack */
@@ -391,3 +488,66 @@ transform: translateX(60px);
 opacity: 1;
 }
 
+/*responsive rules*/
+@media (max-width: 768px) {
+nav {
+height: 68px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+.about-me__info--para {
+    font-size: 18px;
+}
+
+.language {
+    width: calc(100% / 3);
+}
+
+.project__description--para {
+    font-size: 14px;
+}
+
+.project__description {
+    left: 30px;
+    padding-right: 30px;
+}
+}
+
+@media (max-width: 480px) {
+.nav__link:not(:last-child){
+    display: none;
+}
+
+.project__description--para {
+    display: none;
+}
+
+.project__description--links{
+    display: flex;
+    justify-content: center;
+}
+
+.project__description__sub-title{
+    text-align: center;
+    margin: 12px 0;
+}
+
+.project__description--title {
+    line-height: 1;
+    font-size: 32px;
+    text-align: center;
+}
+
+.project__description {
+    padding: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footer__social--list {
+    padding: 0 12px;
+}
+}
